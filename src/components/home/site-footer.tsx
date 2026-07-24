@@ -1,4 +1,4 @@
-import { dealer, nav } from "./data";
+import { dealer, modelCredits, nav } from "./data";
 import { Facebook, Instagram, Phone, Pin, TikTok, YouTube } from "./icons";
 
 const newVehicles = nav.find((n) => n.label === "New Vehicles")?.children ?? [];
@@ -98,6 +98,41 @@ export function SiteFooter() {
               © {new Date().getFullYear()} {dealer.name}. All rights reserved.{" "}
               <a href="/privacy" className="underline hover:no-underline">Privacy policy</a> ·{" "}
               <a href="/terms" className="underline hover:no-underline">Terms of use</a>.
+            </p>
+            <p className="opacity-70">
+              3D models:{" "}
+              {modelCredits.map((c, i) => (
+                <span key={c.title}>
+                  {i > 0 && " · "}
+                  <a
+                    href={c.modelUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:no-underline"
+                  >
+                    {c.title}
+                  </a>{" "}
+                  by{" "}
+                  <a
+                    href={c.authorUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:no-underline"
+                  >
+                    {c.author}
+                  </a>{" "}
+                  (
+                  <a
+                    href={c.licenseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:no-underline"
+                  >
+                    {c.license}
+                  </a>
+                  )
+                </span>
+              ))}
             </p>
           </div>
         </div>

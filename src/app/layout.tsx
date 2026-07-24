@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,7 +29,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        {/* Google's <model-viewer> web component — powers the hero 3D models */}
+        <Script
+          type="module"
+          src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"
+          strategy="beforeInteractive"
+        />
+      </body>
     </html>
   );
 }

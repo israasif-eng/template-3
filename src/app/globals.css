@@ -62,3 +62,9 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Hide <model-viewer>'s default loading progress bar (the dark bar that
+   appears at the top of the hero models while a large GLB downloads). */
+model-viewer::part(default-progress-bar) {
+  display: none;
+}

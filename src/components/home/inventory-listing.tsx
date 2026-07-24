@@ -20,10 +20,16 @@ function money(n: number) {
   return n.toLocaleString("en-CA");
 }
 
-export function InventoryListing({ condition = "new" }: { condition?: "new" | "used" }) {
+export function InventoryListing({
+  condition = "new",
+  initialType,
+}: {
+  condition?: "new" | "used";
+  initialType?: string;
+}) {
   const base = condition === "used" ? usedInventory : inventory;
 
-  const [types, setTypes] = useState<string[]>([]);
+  const [types, setTypes] = useState<string[]>(initialType ? [initialType] : []);
   const [makes, setMakes] = useState<string[]>([]);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<Sort>("year_desc");

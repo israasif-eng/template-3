@@ -80,20 +80,20 @@ export const nav: NavItem[] = [
     href: "/new",
     children: [
       { label: "All New Inventory", href: "/new" },
-      { label: "Motorcycles", href: "/new/motorcycles" },
-      { label: "Motocross", href: "/new/motocross" },
-      { label: "Scooters", href: "/new/scooters" },
-      { label: "3-Wheel Vehicles", href: "/new/three-wheel" },
-      { label: "Slingshot", href: "/new/slingshot" },
-      { label: "ATVs", href: "/new/atv" },
-      { label: "Side-by-Sides", href: "/new/side-by-side" },
-      { label: "Snowmobiles", href: "/new/snowmobile" },
-      { label: "Watercraft", href: "/new/watercraft" },
-      { label: "Sport Boats", href: "/new/boats" },
-      { label: "Pontoons", href: "/new/pontoon" },
-      { label: "Fishing Boats", href: "/new/fishing" },
-      { label: "Outboard Motors", href: "/new/outboard" },
-      { label: "Trailers", href: "/new/trailer" },
+      { label: "Motorcycles", href: "/new?type=Motorcycle" },
+      { label: "Motocross", href: "/new?type=Motorcycle" },
+      { label: "Scooters", href: "/new?type=Motorcycle" },
+      { label: "3-Wheel Vehicles", href: "/new?type=Side-by-Side" },
+      { label: "Slingshot", href: "/new?type=Side-by-Side" },
+      { label: "ATVs", href: "/new?type=ATV" },
+      { label: "Side-by-Sides", href: "/new?type=Side-by-Side" },
+      { label: "Snowmobiles", href: "/new?type=Snowmobile" },
+      { label: "Watercraft", href: "/new?type=Watercraft" },
+      { label: "Sport Boats", href: "/new?type=Boat" },
+      { label: "Pontoons", href: "/new?type=Boat" },
+      { label: "Fishing Boats", href: "/new?type=Boat" },
+      { label: "Outboard Motors", href: "/new?type=Outboard Motor" },
+      { label: "Trailers", href: "/new?type=Trailer" },
     ],
   },
   {
@@ -101,14 +101,14 @@ export const nav: NavItem[] = [
     href: "/used",
     children: [
       { label: "All Used Inventory", href: "/used" },
-      { label: "Motorcycles", href: "/used/motorcycles" },
-      { label: "ATVs", href: "/used/atv" },
-      { label: "Side-by-Sides", href: "/used/side-by-side" },
-      { label: "Snowmobiles", href: "/used/snowmobile" },
-      { label: "Watercraft", href: "/used/watercraft" },
-      { label: "Fishing Boats", href: "/used/fishing" },
-      { label: "Pontoons", href: "/used/pontoon" },
-      { label: "Trailers", href: "/used/trailer" },
+      { label: "Motorcycles", href: "/used?type=Motorcycle" },
+      { label: "ATVs", href: "/used?type=ATV" },
+      { label: "Side-by-Sides", href: "/used?type=Side-by-Side" },
+      { label: "Snowmobiles", href: "/used?type=Snowmobile" },
+      { label: "Watercraft", href: "/used?type=Watercraft" },
+      { label: "Fishing Boats", href: "/used?type=Fishing Boats" },
+      { label: "Pontoons", href: "/used?type=Pontoon" },
+      { label: "Trailers", href: "/used?type=Trailer" },
     ],
   },
   {
@@ -351,6 +351,47 @@ export const promotions: Promotion[] = [
   { id: "p10", title: "MY25 Cruiser & Bagger Event", dateRange: "July 1, 2026 to July 31, 2026", make: "Indian Motorcycle", type: "Motorcycle", department: "New vehicles", disclaimer: "Limited-time offers on select cruiser and bagger models." },
   { id: "p11", title: "All Out Summer — 2026 Slingshot Models", dateRange: "July 1, 2026 to July 31, 2026", make: "Slingshot", type: "Three-Wheel", department: "New vehicles", disclaimer: "Offer valid on select 2026 Slingshot models. See dealer for details." },
   { id: "p12", title: "Summer Ride Financing Event", dateRange: "June 1, 2026 to July 31, 2026", make: "Yamaha", type: "Watercraft", department: "General", disclaimer: "Competitive financing rates on select models. On approved credit." },
+];
+
+// Attribution for the hero 3D models. All are Sketchfab models under
+// CC BY 4.0, which requires crediting the author and linking the license.
+export type ModelCredit = {
+  title: string;
+  modelUrl: string;
+  author: string;
+  authorUrl: string;
+  license: string;
+  licenseUrl: string;
+};
+
+export const modelCredits: ModelCredit[] = [
+  {
+    title: "Sports Bike",
+    modelUrl:
+      "https://sketchfab.com/3d-models/sports-bike-a80259b859c842d5824c25c61e0fc421",
+    author: "Futurealiti",
+    authorUrl: "https://sketchfab.com/futurealiti",
+    license: "CC BY 4.0",
+    licenseUrl: "http://creativecommons.org/licenses/by/4.0/",
+  },
+  {
+    title: "SDC Snowbike Motor",
+    modelUrl:
+      "https://sketchfab.com/3d-models/free-sdc-snowbike-motor-3daf3197a24448a6903d54a96bb4786c",
+    author: "SDC PERFORMANCE™️",
+    authorUrl: "https://sketchfab.com/3Duae",
+    license: "CC BY 4.0",
+    licenseUrl: "http://creativecommons.org/licenses/by/4.0/",
+  },
+  {
+    title: "Suzuki Quadzilla 500",
+    modelUrl:
+      "https://sketchfab.com/3d-models/suzuki-quadzilla-500-2eb658cc24074f158e47395493bd6308",
+    author: "RES1N",
+    authorUrl: "https://sketchfab.com/Resinnnn",
+    license: "CC BY 4.0",
+    licenseUrl: "http://creativecommons.org/licenses/by/4.0/",
+  },
 ];
 
 export const reviews: Review[] = [

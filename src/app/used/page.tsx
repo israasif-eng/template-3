@@ -11,7 +11,12 @@ export const metadata: Metadata = {
     "Browse quality pre-owned powersports and marine vehicles at Supreme Dealer in Saint-Jérôme — each inspected top to bottom by our expert technicians.",
 };
 
-export default function UsedInventoryPage() {
+export default async function UsedInventoryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string }>;
+}) {
+  const { type } = await searchParams;
   return (
     <main className="bg-white">
       <div className="bg-layout">
@@ -27,7 +32,7 @@ export default function UsedInventoryPage() {
 
       {/* Listing */}
       <div className="site-container py-4">
-        <InventoryListing condition="used" />
+        <InventoryListing condition="used" initialType={type} />
       </div>
 
       <SpecialOffers />

@@ -11,7 +11,12 @@ export const metadata: Metadata = {
     "Browse the new powersports and marine inventory at Supreme Dealer in Saint-Jérôme — motorcycles, ATVs, side-by-sides, watercraft, boats, and snowmobiles.",
 };
 
-export default function NewInventoryPage() {
+export default async function NewInventoryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string }>;
+}) {
+  const { type } = await searchParams;
   return (
     <main className="bg-white">
       <div className="bg-layout">
@@ -27,7 +32,7 @@ export default function NewInventoryPage() {
 
       {/* Listing */}
       <div className="site-container py-4">
-        <InventoryListing />
+        <InventoryListing initialType={type} />
       </div>
 
       <SpecialOffers />

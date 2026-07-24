@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Logo } from "./logo";
+import { HeroModels } from "./hero-models";
 import { typeTabs } from "./data";
 import { Placeholder } from "./placeholder";
 import { ChevronDown, ChevronRight } from "./icons";
@@ -19,9 +20,22 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-t from-layout via-layout/60 to-layout/30" />
         </div>
 
-        {/* hero logo */}
-        <div className="relative z-10 flex flex-1 items-center justify-center py-14">
-          <Logo className="scale-[2] md:scale-[3]" />
+        {/* hero brand + reserved 3D animation space */}
+        <div className="relative z-10 flex flex-1 items-center py-14">
+          <div className="site-container flex w-full items-center gap-6">
+            {/* Brand wordmark — anchored to the far left */}
+            <div className="flex w-full items-center md:w-1/2">
+              <Logo className="origin-left scale-[1.75] md:scale-[2.5]" />
+            </div>
+
+            {/* 3D model showcase — cycles the three models, each spinning */}
+            <div
+              className="relative hidden min-h-[360px] w-1/2 md:block"
+              data-slot="hero-3d-animation"
+            >
+              <HeroModels />
+            </div>
+          </div>
         </div>
 
         {/* type selector header */}
